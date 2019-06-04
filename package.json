@@ -1,0 +1,26 @@
+{
+    "name": "ifs-highlighter",
+    "displayName": "ifs-highlighter",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "DiscreteTom",
+    "engines": {
+        "vscode": "^1.34.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "ifs",
+            "aliases": ["interactive fiction script", "ifs"],
+            "extensions": [".ifs"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "ifs",
+            "scopeName": "source.ifs",
+            "path": "./syntaxes/ifs.tmLanguage.json"
+        }]
+    }
+}
