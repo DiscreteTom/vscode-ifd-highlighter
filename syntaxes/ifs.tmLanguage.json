@@ -3,27 +3,77 @@
 	"name": "interactive fiction script",
 	"patterns": [
 		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
+			"include": "#script"
 		}
 	],
 	"repository": {
-		"keywords": {
+		"script": {
 			"patterns": [{
-				"name": "keyword.control.ifs",
-				"match": "\\b(if|while|for|return)\\b"
+				"begin": "^(@[^\\}]+)\\{",
+				"end": "}",
+				"beginCaptures": {
+					"1": {
+						"name": "keyword.control.ifs"
+					}
+				},
+				"patterns": [
+					{
+						"include": "#actions"
+					}
+				]
 			}]
 		},
-		"strings": {
-			"name": "string.quoted.double.ifs",
-			"begin": "\"",
-			"end": "\"",
+		"actions": {
 			"patterns": [
 				{
-					"name": "constant.character.escape.ifs",
-					"match": "\\\\."
+					"begin": "((([a-zA-Z0-9_]+)|\\(\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\s*(:\\s*([^\\)]+))?\\)|\\s)+)\\{",
+					"end": "\\}",
+					"beginCaptures": {
+						"1": {
+							"name": "entity.name.function.ifs"
+						},
+						"4": {
+							"name": "variable.parameter.ifs"
+						},
+						"6": {
+							"name": "entity.name.class.ifs"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#built-in-func"
+						},
+						{
+							"include": "#build-in-var"
+						},
+						{
+							"include": "source.python"
+						}
+					]
+				}
+			]
+		},
+		"built-in-func": {
+			"patterns": [
+				{
+					"match": "\\b(printItemList|print|printStory|parse|load|unload|run|findItem)\\b",
+					"captures": {
+						"1": {
+							"name": "support.function.ifs"
+						}
+					}
+				}
+			]
+		},
+		"built-in-var": {
+			"patterns": [
+				{
+					"match": "\\b(this|config|game|items)\\b",
+					"captures": {
+						"1": {
+							"name": "support.property-value.ifs"
+						}
+					}
 				}
 			]
 		}
