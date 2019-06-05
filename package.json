@@ -13,7 +13,7 @@
     "contributes": {
         "languages": [{
             "id": "ifd",
-            "aliases": ["interactive fiction script", "ifd"],
+            "aliases": ["interactive fiction data", "ifd"],
             "extensions": [".ifd"],
             "configuration": "./language-configuration.json"
         }],
