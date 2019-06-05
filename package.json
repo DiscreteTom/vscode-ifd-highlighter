@@ -1,6 +1,6 @@
 {
-    "name": "ifs-highlighter",
-    "displayName": "ifs-highlighter",
+    "name": "ifd-highlighter",
+    "displayName": "ifd-highlighter",
     "description": "",
     "version": "0.0.1",
     "publisher": "DiscreteTom",
@@ -12,15 +12,15 @@
     ],
     "contributes": {
         "languages": [{
-            "id": "ifs",
-            "aliases": ["interactive fiction script", "ifs"],
-            "extensions": [".ifs"],
+            "id": "ifd",
+            "aliases": ["interactive fiction script", "ifd"],
+            "extensions": [".ifd"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "ifs",
-            "scopeName": "source.ifs",
-            "path": "./syntaxes/ifs.tmLanguage.json"
+            "language": "ifd",
+            "scopeName": "source.ifd",
+            "path": "./syntaxes/ifd.tmLanguage.json"
         }]
     }
 }

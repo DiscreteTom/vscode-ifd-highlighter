@@ -1,3 +1,3 @@
-# ifs-highlighter 
+# ifd-highlighter 
 
-highlighter for ifs
+highlighter for ifd

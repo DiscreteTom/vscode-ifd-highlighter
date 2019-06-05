@@ -13,7 +13,7 @@
 				"end": "}",
 				"beginCaptures": {
 					"1": {
-						"name": "keyword.control.ifs"
+						"name": "keyword.control.ifd"
 					}
 				},
 				"patterns": [
@@ -30,13 +30,13 @@
 					"end": "\\}",
 					"beginCaptures": {
 						"1": {
-							"name": "entity.name.function.ifs"
+							"name": "entity.name.function.ifd"
 						},
 						"4": {
-							"name": "variable.parameter.ifs"
+							"name": "variable.parameter.ifd"
 						},
 						"6": {
-							"name": "entity.name.class.ifs"
+							"name": "entity.name.class.ifd"
 						}
 					},
 					"patterns": [
@@ -59,7 +59,7 @@
 					"match": "\\b(printItemList|print|printStory|parse|load|unload|run|findItem)\\b",
 					"captures": {
 						"1": {
-							"name": "support.function.ifs"
+							"name": "support.function.ifd"
 						}
 					}
 				}
@@ -71,12 +71,12 @@
 					"match": "\\b(this|config|game|items)\\b",
 					"captures": {
 						"1": {
-							"name": "support.property-value.ifs"
+							"name": "variable.language.ifd"
 						}
 					}
 				}
 			]
 		}
 	},
-	"scopeName": "source.ifs"
+	"scopeName": "source.ifd"
 }
