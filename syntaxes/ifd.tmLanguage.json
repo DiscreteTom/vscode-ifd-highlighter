@@ -3,30 +3,38 @@
 	"name": "interactive fiction data",
 	"patterns": [
 		{
-			"include": "#script"
+			"include": "#ifd-root"
 		}
 	],
 	"repository": {
-		"script": {
-			"patterns": [{
-				"begin": "^(@[^\\}]+)\\{",
-				"end": "}",
-				"beginCaptures": {
-					"1": {
-						"name": "keyword.control.ifd"
-					}
-				},
-				"patterns": [
-					{
-						"include": "#actions"
-					}
-				]
-			}]
+		"ifd-root": {
+			"patterns": [
+				{
+					"begin": "^(@[^\\}]+)\\{",
+					"end": "}",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.ifd"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#actions"
+						},
+						{
+							"include": "#json-data"
+						},
+						{
+							"include": "#yaml-data"
+						}
+					]
+				}
+			]
 		},
 		"actions": {
 			"patterns": [
 				{
-					"begin": "((([a-zA-Z0-9_]+)|\\(\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\s*(:\\s*([^\\)]+))?\\)|\\s)+)\\{",
+					"begin": "((([^\\{ \\f\\n\\r\\t\\v]+\\s*)|\\(\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\s*(:\\s*([^\\)]+))?\\)\\s*)+)\\{",
 					"end": "\\}",
 					"beginCaptures": {
 						"1": {
@@ -48,6 +56,42 @@
 						},
 						{
 							"include": "source.python"
+						}
+					]
+				}
+			]
+		},
+		"json-data": {
+			"patterns": [
+				{
+					"begin": "^\\s*\\{\\s*(json)\\s*$",
+					"end": "^\\s*\\}\\s*$",
+					"beginCaptures": {
+						"1": {
+							"name": "entity.name.tag.ifd"
+						}
+					},
+					"patterns": [
+						{
+							"include": "source.json"
+						}
+					]
+				}
+			]
+		},
+		"yaml-data": {
+			"patterns": [
+				{
+					"begin": "^\\s*\\{\\s*(yaml|yml)?\\s*$",
+					"end": "^\\s*\\}\\s*$",
+					"beginCaptures": {
+						"1": {
+							"name": "entity.name.tag.ifd"
+						}
+					},
+					"patterns": [
+						{
+							"include": "source.yaml"
 						}
 					]
 				}
