@@ -1,0 +1,11 @@
+{
+	"code block": {
+		"prefix": "code: |",
+		"body": [
+			"code: |",
+			"  $0",
+			"^"
+		],
+		"description": "python grammar code block"
+	}
+}

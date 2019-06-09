@@ -21,6 +21,12 @@
             "language": "ifd",
             "scopeName": "source.ifd",
             "path": "./syntaxes/ifd.tmLanguage.json"
-        }]
+        }],
+        "snippets": [
+            {
+                "language": "ifd",
+                "path": "./snippets/ifd.json"
+            }
+        ]
     }
 }
