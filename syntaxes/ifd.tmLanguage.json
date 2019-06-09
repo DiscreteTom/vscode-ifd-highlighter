@@ -3,15 +3,15 @@
 	"name": "interactive fiction data",
 	"patterns": [
 		{
-			"include": "#ifd-root"
+			"include": "#ifd-code"
 		},
 		{
 			"include": "source.yaml"
 		}
 	],
 	"repository": {
-		"ifd-root": {
-			"begin": "^\\s*(code\\s*:\\s*\\|)\\s*$",
+		"ifd-code": {
+			"begin": "^\\s*((code|onLoad|onUnload)\\s*:\\s*\\|)\\s*$",
 			"end": "^\\s*(\\^)\\s*$",
 			"beginCaptures": {
 				"1": {
