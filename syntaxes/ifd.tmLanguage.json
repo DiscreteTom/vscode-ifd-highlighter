@@ -4,120 +4,28 @@
 	"patterns": [
 		{
 			"include": "#ifd-root"
+		},
+		{
+			"include": "source.yaml"
 		}
 	],
 	"repository": {
 		"ifd-root": {
-			"patterns": [
-				{
-					"begin": "^(@[^\\}]+)\\{",
-					"end": "}",
-					"beginCaptures": {
-						"1": {
-							"name": "keyword.control.ifd"
-						}
-					},
-					"patterns": [
-						{
-							"include": "#actions"
-						},
-						{
-							"include": "#json-data"
-						},
-						{
-							"include": "#yaml-data"
-						}
-					]
+			"begin": "^\\s*(code\\s*:\\s*\\|)\\s*$",
+			"end": "^\\s*(\\^)\\s*$",
+			"beginCaptures": {
+				"1": {
+					"name": "variable.parameter.ifd"
 				}
-			]
-		},
-		"actions": {
-			"patterns": [
-				{
-					"begin": "((([^\\{ \\f\\n\\r\\t\\v]+\\s*)|\\(\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\s*(:\\s*([^\\)]+))?\\)\\s*)+)\\{",
-					"end": "\\}",
-					"beginCaptures": {
-						"1": {
-							"name": "entity.name.function.ifd"
-						},
-						"4": {
-							"name": "variable.parameter.ifd"
-						},
-						"6": {
-							"name": "entity.name.class.ifd"
-						}
-					},
-					"patterns": [
-						{
-							"include": "#built-in-func"
-						},
-						{
-							"include": "#build-in-var"
-						},
-						{
-							"include": "source.python"
-						}
-					]
+			},
+			"endCaptures": {
+				"1": {
+					"name": "variable.parameter.ifd"
 				}
-			]
-		},
-		"json-data": {
+			},
 			"patterns": [
 				{
-					"begin": "^\\s*\\{\\s*(json)\\s*$",
-					"end": "^\\s*\\}\\s*$",
-					"beginCaptures": {
-						"1": {
-							"name": "entity.name.tag.ifd"
-						}
-					},
-					"patterns": [
-						{
-							"include": "source.json"
-						}
-					]
-				}
-			]
-		},
-		"yaml-data": {
-			"patterns": [
-				{
-					"begin": "^\\s*\\{\\s*(yaml|yml)?\\s*$",
-					"end": "^\\s*\\}\\s*$",
-					"beginCaptures": {
-						"1": {
-							"name": "entity.name.tag.ifd"
-						}
-					},
-					"patterns": [
-						{
-							"include": "source.yaml"
-						}
-					]
-				}
-			]
-		},
-		"built-in-func": {
-			"patterns": [
-				{
-					"match": "\\b(printItemList|print|printStory|parse|load|unload|run|findItem)\\b",
-					"captures": {
-						"1": {
-							"name": "support.function.ifd"
-						}
-					}
-				}
-			]
-		},
-		"built-in-var": {
-			"patterns": [
-				{
-					"match": "\\b(this|config|game|items)\\b",
-					"captures": {
-						"1": {
-							"name": "variable.language.ifd"
-						}
-					}
+					"include": "source.python"
 				}
 			]
 		}
