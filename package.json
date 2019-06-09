@@ -27,6 +27,16 @@
                 "language": "ifd",
                 "path": "./snippets/ifd.json"
             }
-        ]
+        ],
+        "configurationDefaults": {
+            "[ifd]": {
+                "editor.quickSuggestions": {
+                    "other": true,
+                    "comments": false,
+                    "strings": true
+                },
+                "editor.snippetSuggestions": "top"
+            }
+        }
     }
 }
