@@ -35,7 +35,8 @@
                     "comments": false,
                     "strings": true
                 },
-                "editor.snippetSuggestions": "top"
+                "editor.snippetSuggestions": "top",
+                "editor.insertSpaces": true
             }
         }
     }
