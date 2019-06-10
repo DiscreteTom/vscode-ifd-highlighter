@@ -4,7 +4,7 @@
 		"body": [
 			"code: |",
 			"  $1",
-			"^",
+			"  ^",
 			"$0"
 		],
 		"description": "(code)code block using python grammar"
@@ -48,7 +48,7 @@
 		"body": [
 			"onLoad: |",
 			"  $1",
-			"^",
+			"  ^",
 			"$0"
 		],
 		"description": "(code)actions that will be triggered after this item has been loaded"
@@ -58,7 +58,7 @@
 		"body": [
 			"onUnload: |",
 			"  $1",
-			"^",
+			"  ^",
 			"$0"
 		],
 		"description": "(code)actions that will be triggered after this item bas been unloaded"
@@ -70,7 +70,7 @@
 			"  - name: '$1'",
 			"    code: |",
 			"      $2",
-			"    ^",
+			"      ^",
 			"  $0"
 		],
 		"description": "(list)actions that will be loaded to shell"
@@ -81,7 +81,7 @@
 			"- name: '$1'",
 			"  code: |",
 			"    $2",
-			"  ^",
+			"    ^",
 			"$0"
 		],
 		"description": "(obj)single item action. If user input action name in shell, code will be executed. `this` in action name will be replaced to this item's name. You can use `(params: class)` to catch params"
