@@ -7,6 +7,83 @@
 			"^",
 			"$0"
 		],
-		"description": "python grammar code block"
+		"description": "(code)code block using python grammar"
+	},
+	"include file list": {
+		"prefix": "include",
+		"body": [
+			"include:",
+			"  - $1",
+			"$0"
+		],
+		"description": "(list)include other .ifd files"
+	},
+	"item name": {
+		"prefix": "name",
+		"body": [
+			"name: '$1'",
+			"$0"
+		],
+		"description": "(str)item name"
+	},
+	"item description": {
+		"prefix": "description",
+		"body": [
+			"description: '$1'",
+			"$0"
+		],
+		"description": "(str)item description"
+	},
+	"item-data": {
+		"prefix": "data",
+		"body": [
+			"data:",
+			"  $1",
+			"$0"
+		],
+		"description": "(obj)user defined item data"
+	},
+	"item onLoad action": {
+		"prefix": "onLoad",
+		"body": [
+			"onLoad: |",
+			"  $1",
+			"^",
+			"$0"
+		],
+		"description": "(code)actions that will be triggered after this item has been loaded"
+	},
+	"item onUnload action": {
+		"prefix": "onUnload",
+		"body": [
+			"onUnload: |",
+			"  $1",
+			"^",
+			"$0"
+		],
+		"description": "(code)actions that will be triggered after this item bas been unloaded"
+	},
+	"item actions": {
+		"prefix": "actions",
+		"body": [
+			"actions:",
+			"  - name: '$1'",
+			"    code: |",
+			"      $2",
+			"    ^",
+			"  $0"
+		],
+		"description": "(list)actions that will be loaded to shell"
+	},
+	"single item action": {
+		"prefix": "- name",
+		"body": [
+			"- name: '$1'",
+			"  code: |",
+			"    $2",
+			"  ^",
+			"$0"
+		],
+		"description": "(obj)single item action. If user input action name in shell, code will be executed. `this` in action name will be replaced to this item's name. You can use `(params: class)` to catch params"
 	}
 }
