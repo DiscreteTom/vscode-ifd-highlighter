@@ -13,7 +13,7 @@
 		"prefix": "include",
 		"body": [
 			"include:",
-			"  - $1",
+			"  - '$1'",
 			"$0"
 		],
 		"description": "(list)include other .ifd files"
@@ -85,5 +85,14 @@
 			"$0"
 		],
 		"description": "(obj)single item action. If user input action name in shell, code will be executed. `this` in action name will be replaced to this item's name. You can use `(params: class)` to catch params"
+	},
+	"item classes": {
+		"prefix": "classes",
+		"body": [
+			"classes: ",
+			"  - '$1'",
+			"$0"
+		],
+		"description": "(list)classes that will be included"
 	}
 }
