@@ -11,7 +11,7 @@
 	],
 	"repository": {
 		"ifd-code": {
-			"begin": "^\\s*((code|onLoad|onUnload)\\s*:\\s*\\|)\\s*$",
+			"begin": "^\\s*((code|onMount|onUnmount)\\s*:\\s*\\|)\\s*$",
 			"end": "^\\s*(\\^)\\s*$",
 			"beginCaptures": {
 				"1": {

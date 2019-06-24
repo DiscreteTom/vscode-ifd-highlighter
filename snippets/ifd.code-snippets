@@ -43,25 +43,25 @@
 		],
 		"description": "(obj)user defined item data"
 	},
-	"item onLoad action": {
-		"prefix": "onLoad",
+	"item onMount action": {
+		"prefix": "onMount",
 		"body": [
-			"onLoad: |",
+			"onMount: |",
 			"  $1",
 			"  ^",
 			"$0"
 		],
-		"description": "(code)actions that will be triggered after this item has been loaded"
+		"description": "(code)actions that will be triggered after this item has been mounted"
 	},
-	"item onUnload action": {
-		"prefix": "onUnload",
+	"item onUnmount action": {
+		"prefix": "onUnmount",
 		"body": [
-			"onUnload: |",
+			"onUnmount: |",
 			"  $1",
 			"  ^",
 			"$0"
 		],
-		"description": "(code)actions that will be triggered after this item bas been unloaded"
+		"description": "(code)actions that will be triggered after this item bas been unmounted"
 	},
 	"item actions": {
 		"prefix": "actions",
