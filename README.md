@@ -1,4 +1,4 @@
-# ifd-highlighter 
+# ifd-highlighter
 
 Highlighter for ifd file(interactive fiction data)
 
