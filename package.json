@@ -1,8 +1,11 @@
 {
     "name": "ifd-highlighter",
     "displayName": "ifd-highlighter",
-    "description": "",
-    "version": "0.2.0",
+    "description": "highlighter for interactive fiction data file",
+    "version": "0.1.0",
+    "repository": {
+        "url": "https://github.com/DiscreteTom/vscode-ifd-highlighter"
+    },
     "publisher": "DiscreteTom",
     "engines": {
         "vscode": "^1.34.0"
