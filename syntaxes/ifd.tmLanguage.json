@@ -6,10 +6,65 @@
 			"include": "#ifd-code"
 		},
 		{
+			"include": "#ifd-action-name"
+		},
+		{
 			"include": "source.yaml"
 		}
 	],
 	"repository": {
+		"ifd-action-name": {
+			"begin": "^\\s*- (name): (')",
+			"end": "(')$",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.ifd"
+				},
+				"2": {
+					"name": "string.quoted.single.ifd"
+				}
+			},
+			"endCaptures": {
+				"1": {
+					"name": "string.quoted.single.ifd"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#ifd-name-object"
+				},
+				{
+					"include": "#ifd-name-any"
+				},
+				{
+					"match": "[^']",
+					"captures":{
+						"0": {
+							"name": "string.quoted.single.ifd"
+						}
+					}
+				}
+			]
+		},
+		"ifd-name-object": {
+			"match": "\\(\\s*(\\w+)(\\s*:\\s*(\\S+))?\\s*\\)",
+			"captures": {
+				"1": {
+					"name": "variable.parameter.ifd"
+				},
+				"3": {
+					"name": "support.class.ifd"
+				}
+			}
+		},
+		"ifd-name-any": {
+			"match": "\\[\\s*(\\w+)\\s*\\]",
+			"captures": {
+				"1": {
+					"name": "variable.parameter.ifd"
+				}
+			}
+		},
 		"ifd-code": {
 			"begin": "^\\s*((code|onMount|onUnmount)\\s*:\\s*\\|)\\s*$",
 			"end": "^\\s*(\\^)\\s*$",
