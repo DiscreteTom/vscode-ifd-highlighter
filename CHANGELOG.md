@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.1.3] - 2019-08-27
+
+### Added
+
+- Highlighting for `this` in `action.name`.
+
 ## [0.1.2] - 2019-08-12
 
 ### Added
