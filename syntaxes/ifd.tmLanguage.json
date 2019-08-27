@@ -37,6 +37,14 @@
 					"include": "#ifd-name-any"
 				},
 				{
+					"match": "this",
+					"captures": {
+						"0": {
+							"name": "variable.parameter.ifd"
+						}
+					}
+				},
+				{
 					"match": "[^']",
 					"captures":{
 						"0": {
